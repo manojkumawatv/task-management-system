@@ -1,5 +1,7 @@
 package com.mk.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,14 +18,16 @@ public class TaskServiceImp implements TaskService {
 	@Override
 	public Integer createTask(TaskDTO task) {
 		Task taskEntity = new Task();
-		taskEntity.setId(task.getId());
-		taskEntity.setTitle(task.getTitle());
-		taskEntity.setDescription(task.getDescription());
-		taskEntity.setUserId(task.getUserId());
-		taskEntity.setProjectId(task.getProjectId());
-		taskEntity.setStatus(task.getStatus());
-		taskEntity.setDueDate(task.getDueDate());
-		Task taskEntity2 = taskRepository.save(taskEntity);
-		return taskEntity2.getId();
+		taskEntity.prepareTaskEntity(task);
+		taskRepository.saveAndFlush(taskEntity);
+		return taskEntity.getId();
+	}
+	@Override
+	public List<Task> getAllTask() {
+		return taskRepository.findAll();
+	}
+	@Override
+	public List<Task> getAllTaskByUser(Integer id) {
+		return taskRepository.findByUserId(id.toString());
 	}
 }
