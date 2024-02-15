@@ -2,6 +2,8 @@ package com.mk.domain;
 
 import java.time.LocalDate;
 
+import com.mk.dto.TaskDTO;
+
 import jakarta.persistence.GenerationType;
 
 import jakarta.persistence.Column;
@@ -78,5 +80,14 @@ public class Task {
 	public int hashCode() {
 
 		return 31;
+	}
+	public void prepareTaskEntity(TaskDTO task) {
+		this.id=task.getId();
+		this.title=task.getTitle();
+		this.description=task.getDescription();
+		this.dueDate=task.getDueDate();
+		this.userId=task.getUserId();
+		this.status=task.getStatus();
+		this.projectId=task.getProjectId();
 	}
 }
