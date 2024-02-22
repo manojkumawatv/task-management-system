@@ -1,11 +1,17 @@
+
 package com.mk.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mk.service.TaskService;
+import com.mk.domain.Task;
 import com.mk.dto.TaskDTO;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
@@ -15,7 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/task")
+@RequestMapping("/tasks")
 public class TaskAPI {
 	
 	@Autowired
@@ -24,7 +30,16 @@ public class TaskAPI {
 	Environment environment;
 	
 	@GetMapping
+	public List<Task> getAllTask() {
+		return taskService.getAllTask();
+	}
 	
+	//TODO
+	@GetMapping("/{userId}")
+	public List<Task> getAllTaskByUserId(@RequestParam Integer userId) {
+		List<Task> tasks=taskService.getAllTaskByUser(userId);
+		return tasks;
+	}
 	
 	@PostMapping
 	public ResponseEntity<String> createTask(@RequestBody TaskDTO task){
