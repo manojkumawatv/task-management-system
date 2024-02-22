@@ -10,6 +10,4 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'frontend';
-  names = ['Manoj', 'Rolex', 'Rohit', 'Urmila', 'Sanjay'];
 }
