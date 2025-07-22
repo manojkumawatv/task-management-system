@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mk.domain.Task;
 import com.mk.dto.TaskDTO;
+import com.mk.entity.Task;
 import com.mk.repository.TaskRepository;
 
 @Service("taskService")

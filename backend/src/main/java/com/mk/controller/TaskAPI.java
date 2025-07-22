@@ -4,8 +4,8 @@ package com.mk.controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mk.service.TaskService;
-import com.mk.domain.Task;
 import com.mk.dto.TaskDTO;
+import com.mk.entity.Task;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

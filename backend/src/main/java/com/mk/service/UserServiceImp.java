@@ -3,8 +3,8 @@ package com.mk.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mk.domain.User;
 import com.mk.dto.UserDTO;
+import com.mk.entity.User;
 import com.mk.repository.UserRepository;
 
 @Service

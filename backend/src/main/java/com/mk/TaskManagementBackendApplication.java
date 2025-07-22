@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-@EntityScan(basePackages = "com.mk.domain")
+@EntityScan(basePackages = "com.mk.entity")
 public class TaskManagementBackendApplication {
 
 	public static void main(String[] args) {

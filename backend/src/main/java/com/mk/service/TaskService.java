@@ -2,8 +2,8 @@ package com.mk.service;
 
 import java.util.List;
 
-import com.mk.domain.Task;
 import com.mk.dto.TaskDTO;
+import com.mk.entity.Task;
 
 public interface TaskService {
 	public Integer createTask(TaskDTO task);

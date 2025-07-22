@@ -1,4 +1,4 @@
-package com.mk.domain;
+package com.mk.entity;
 
 import java.time.LocalDate;
 

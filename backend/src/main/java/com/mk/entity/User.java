@@ -1,6 +1,4 @@
-package com.mk.domain;
-
-import java.time.LocalDate;
+package com.mk.entity;
 
 import com.mk.dto.UserDTO;
 
