@@ -90,6 +90,7 @@ project-root/
 - 🔹 [LinkedIn – Manoj Kumawat](https://www.linkedin.com/in/manojkumawatv)
 - 🔹 [GitHub – manojkumawatv](https://github.com/manojkumawatv)
 - 🔹 [LeetCode – Manoj Kumawat](https://leetcode.com/u/manoj_kumawat)
+- 🔹 [GFG – Manoj Kumawat](https://www.geeksforgeeks.org/user/manojkumawatv/)
 
 ---
 
