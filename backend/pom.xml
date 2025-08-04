@@ -42,8 +42,26 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		<dependency>
+			<groupId>com.google.cloud</groupId>
+			<artifactId>google-cloud-bigquery</artifactId>
+		</dependency>
 	</dependencies>
 
+	<!--  Using libraries-bom to manage versions.
+	See https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+			<groupId>com.google.cloud</groupId>
+			<artifactId>libraries-bom</artifactId>
+			<version>26.62.0</version>
+			<type>pom</type>
+			<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
 	<build>
 		<plugins>
 			<plugin>
