@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="ISO-8859-1">
+    <title>MKV's TMS</title>
 </head>
 <body>
-	<h1>Manoj Kumawat</h1>
+    <h1>Manoj Kumawat</h1>
+    <div id="taskList"></div>
+
+	<!-- for Testing -->
+    <script>
+        async function loadTasks() {
+            const tasks = await fetch('http://localhost:8765/tasks')
+                .then(response => response.json())
+                .catch(error => {
+                    console.error('Error fetching tasks:', error);
+                    return [];
+                });
+
+            // Display tasks on the page
+            const container = document.getElementById("taskList");
+            let html = "<h2>Tasks:</h2>";
+
+            tasks.forEach((task, index) => {
+                html += `<p><strong>Task ${index + 1}:</strong><br>`;
+                for (const key in task) {
+                    html += `${key}: ${task[key]}<br>`;
+                }
+                html += "</p><hr>";
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Call the function
+        loadTasks();
+    </script>
 </body>
 </html>
