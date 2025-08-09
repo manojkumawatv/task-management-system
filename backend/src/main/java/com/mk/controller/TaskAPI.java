@@ -34,7 +34,6 @@ public class TaskAPI {
 		return taskService.getAllTask();
 	}
 	
-	//TODO
 	@GetMapping("/{userId}")
 	public List<Task> getAllTaskByUserId(@RequestParam Integer userId) {
 		List<Task> tasks=taskService.getAllTaskByUser(userId);

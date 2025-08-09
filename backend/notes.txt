@@ -1,0 +1,7 @@
+gcloud config set compute/zone asia-south1-a   //for mumbai india
+
+
+curl https://start.spring.io/starter.tgz \
+  -d dependencies=web \
+  -d type=maven-project \
+  -d baseDir=helloworld | tar -xzvf -
