@@ -1,13 +1,13 @@
 <div class="container">
   <h1>Task Manager</h1>
-  <form>
-    <input type="text" placeholder="Add a new task..." />
+  <form (submit)="addTask()">
+    <input type="text" [(ngModel)]="newTaskName" name="task" placeholder="Add a new task..." />
     <button type="submit">Add</button>
   </form>
   <ul>
-    <li>
-      <span class="task-name">Sample Task</span>
-      <button class="delete-btn">Delete</button>
+    <li *ngFor="let task of tasks">
+      <span class="task-name">{{ task.name }}</span>
+      <!-- <button class="delete-btn" (click)="deleteTask(task.id)">Delete</button> -->
     </li>
   </ul>
 </div>
