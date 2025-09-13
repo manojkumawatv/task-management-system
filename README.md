@@ -1,6 +1,6 @@
 # 📝 Task Management System
 
-A full-stack web application for managing tasks and to-do lists, built using **Java Spring Boot**, **MySQL**, and **AngularJS**.
+A full-stack web application for managing tasks and to-do lists, built using **Java Spring Boot**, **MySQL**, and **Angular**.
 
 ---
 
@@ -9,7 +9,7 @@ A full-stack web application for managing tasks and to-do lists, built using **J
 - Create, Read, Update, and Delete (CRUD) operations on tasks
 - RESTful API backend using Spring Boot
 - Efficient data handling with Spring Data JPA
-- Responsive UI using AngularJS
+- Responsive UI using Angular
 - Modular code structure for scalability
 
 ---
@@ -24,8 +24,8 @@ A full-stack web application for managing tasks and to-do lists, built using **J
 - MySQL
 
 **Frontend:**
-- AngularJS
-- HTML5 / CSS3
+- Angular framework
+- HTML5 and CSS3
 
 **Tools & Platforms:**
 - Eclipse IDE / VS Code

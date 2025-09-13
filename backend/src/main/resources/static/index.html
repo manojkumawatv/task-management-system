@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>MKV's TMS</title>
+    <title>MKV's TMS API</title>
 </head>
 <body>
     <h1>Manoj Kumawat</h1>
@@ -11,7 +11,7 @@
 	<!-- for Testing -->
     <script>
         async function loadTasks() {
-            const tasks = await fetch('http://localhost:8765/tasks')
+            const tasks = await fetch('https://task-backend-759506146108.asia-south1.run.app/tasks')
                 .then(response => response.json())
                 .catch(error => {
                     console.error('Error fetching tasks:', error);
