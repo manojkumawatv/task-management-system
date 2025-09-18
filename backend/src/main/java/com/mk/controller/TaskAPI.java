@@ -20,7 +20,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-@CrossOrigin(origins = {"http://localhost:5173", "https://taskmanager-mkv.vercel.app/"})
+@CrossOrigin(origins = {"http://localhost:4200/", "https://taskmanager-mkv.vercel.app/"})
 @RestController
 @RequestMapping("/tasks")
 public class TaskAPI {

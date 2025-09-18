@@ -1,15 +1,15 @@
 package com.mk.dto;
 
 public class UserDTO {
-	private Long userId;
+	private Long id;
 	private String username;
 	private String emailId;
 	private String password;
 	public Long getUserId() {
-		return userId;
+		return id;
 	}
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setUserId(Long id) {
+		this.id = id;
 	}
 	public String getUsername() {
 		return username;
