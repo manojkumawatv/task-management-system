@@ -16,7 +16,8 @@ export interface Task {
   selector: 'app-task-list',
   templateUrl: './task-list.html',
   styleUrls: ['./task-list.css'],
-  imports: [CommonModule]
+  imports: [CommonModule],
+  standalone: true
 })
 export class TaskList implements OnInit {
   protected readonly title = signal('frontend');
@@ -26,6 +27,7 @@ export class TaskList implements OnInit {
   ngOnInit() {
     this.fetchTasks();
   }
+
   public fetchTasks() {
     this.http.get<Task[]>('https://task-backend-759506146108.asia-south1.run.app/tasks').subscribe(data => {
       this.tasks = data;
@@ -38,7 +40,6 @@ export class TaskList implements OnInit {
   onDeleteTask(taskId: string) {
     this.deleteTask.emit(taskId);
   }
-  
 
   
 }
