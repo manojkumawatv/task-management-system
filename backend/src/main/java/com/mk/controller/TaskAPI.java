@@ -3,10 +3,11 @@ package com.mk.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
-import com.mk.service.TaskService;
 import com.mk.dto.TaskDTO;
 import com.mk.entity.Task;
+import com.mk.service.TaskService;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,9 +19,11 @@ import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-@CrossOrigin(origins = {"http://localhost:4200/", "https://taskmanager-mkv.vercel.app/"})
+@CrossOrigin(origins = {"http://localhost:4200", "https://taskmanager-mkv.vercel.app/"})
 @RestController
 @RequestMapping("/tasks")
 public class TaskAPI {
@@ -47,4 +50,18 @@ public class TaskAPI {
 		String successMessage = environment.getProperty("API.INSERT_SUCCESS") + task.getId();
 		return new ResponseEntity<>(successMessage, HttpStatus.OK);
 	}
+	
+	@PutMapping("/{userId}")
+	public ResponseEntity<String> updateTask(@RequestParam Integer userId, @RequestBody TaskDTO task){
+		taskService.updateTask(task);
+		String successMessage = environment.getProperty("API.UPDATE_SUCCESS") + task.getId();
+		return new ResponseEntity<>(successMessage, HttpStatus.OK);
+	}
+
+	@DeleteMapping("/{id}")
+public ResponseEntity<String> deleteTask(@PathVariable Integer id){
+    taskService.deleteTask(id);
+    String successMessage = environment.getProperty("API.DELETE_SUCCESS") + id;
+    return new ResponseEntity<>(successMessage, HttpStatus.OK);
+}
 }
