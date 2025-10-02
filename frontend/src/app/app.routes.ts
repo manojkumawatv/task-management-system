@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { TaskList } from './features/task-list/task-list';
 
 export const routes: Routes = [
+    {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: 'home', component: TaskList},
     {
         path: 'signup',
