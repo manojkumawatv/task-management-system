@@ -32,12 +32,17 @@ public class TaskServiceImp implements TaskService {
 	}
 	@Override
 	public void updateTask(TaskDTO task) {
-		Task taskEntity = taskRepository.findById(task.getId()).orElseThrow(() -> new RuntimeException("Task not found"));
+		Task taskEntity = taskRepository.findById(
+			task.getId()).orElseThrow(() -> new RuntimeException("Task not found")
+		);
 		taskEntity.prepareTaskEntity(task);
 		taskRepository.saveAndFlush(taskEntity);
 	}
 	@Override
 	public void deleteTask(Integer id) {
+		if (!taskRepository.existsById(id)) {
+			throw new RuntimeException("Task not found with id: " + id);
+		}
 		taskRepository.deleteById(id);
 	}
 }

@@ -59,9 +59,9 @@ public class TaskAPI {
 	}
 
 	@DeleteMapping("/{id}")
-public ResponseEntity<String> deleteTask(@PathVariable Integer id){
-    taskService.deleteTask(id);
-    String successMessage = environment.getProperty("API.DELETE_SUCCESS") + id;
-    return new ResponseEntity<>(successMessage, HttpStatus.OK);
-}
+	public ResponseEntity<String> deleteTask(@PathVariable Integer id){
+		taskService.deleteTask(id);
+		String successMessage = environment.getProperty("API.DELETE_SUCCESS") + id;
+		return new ResponseEntity<>(successMessage, HttpStatus.OK);
+	}
 }

@@ -46,6 +46,6 @@ public class User {
 		this.userId=user.getUserId();
 		this.username=user.getUsername();
 		this.emailId=user.getEmailId();
-		this.password=user.getUsername();
+		this.password=user.getPassword();
 	}
 }
