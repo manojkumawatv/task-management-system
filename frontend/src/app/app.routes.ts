@@ -7,6 +7,8 @@ export const routes: Routes = [
     {
         path: 'signup',
         loadChildren: () => import('./features/signup/signup-module').then(m => m.SignupModule)
+        // Old Ng lazy loading syntax:
+        // loadChildren: './features/signup/signup.module#SignupModule'
     } //Module Lazy Loading
 ];
 
